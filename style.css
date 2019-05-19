@@ -1,0 +1,86 @@
+body{
+    overflow: hidden;
+}
+svg {
+    overflow-y: visible;
+}
+.container-cat {
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 60vh;
+    width: 100vw;
+    background-color: black;
+}
+.lentille {
+    transition: transform .5s ease-in-out;
+}
+.container-food {
+    display: flex;
+    align-items: flex-end;
+    background-color: black;
+    height: 40vh;
+    width: 100vw;
+    overflow-y: visible;
+}
+@keyframes animeMouth {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+.smile-down {
+    animation: animeMouth 4s 1 linear;
+}
+#cat {
+    width: 80%;
+    background-color: black;
+    animation: catAppears 5s ease-in-out 1;
+}
+@keyframes moveFantom {
+    from {
+        transform: translateX(-150px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes catAppears {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes moveWheel {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#fantom {
+    animation: moveFantom 3s;
+    transform-origin: 0% 50%;
+}
+.container-right {
+    animation: moveWheel 5s infinite linear;
+    transform-origin: 503.367px 621px;
+}
+.container-left {
+    animation: moveWheel 5s infinite linear;
+    transform-origin: 119.367px 621px;
+}
+.fantom-body.jump{
+    transform: translateY(-200px);
+}
+.fantom-body {
+    transition: transform ease-in-out .3s;
+}
+.fantom-body .body {
+    fill: rgb(21, 21, 150);
+}
